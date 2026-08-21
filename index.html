@@ -3,142 +3,311 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BLACKDETAIL | Auto Detailing</title>
+
+<title>UNIQUE AUTO DETAILING</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
-margin:0;
-background:#080808;
-color:#fff;
-font-family:Arial,sans-serif;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-header{
-background:#000;
-padding:18px;
-text-align:center;
-border-bottom:1px solid #292929;
+html {
+    scroll-behavior: smooth;
 }
 
-.logo{
-width:150px;
-max-height:80px;
-object-fit:contain;
+body {
+    font-family: Arial, sans-serif;
+    background: #080808;
+    color: white;
 }
 
-.subtitle{
-color:#aaa;
-font-size:12px;
-letter-spacing:2px;
-margin-top:8px;
+header {
+    background: #050505;
+    border-bottom: 1px solid #222;
+    padding: 18px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.hero{
-padding:35px 20px;
-text-align:center;
-background:linear-gradient(145deg,#171717,#050505);
+.nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.hero h1{
-font-size:30px;
-margin:0 0 10px;
-font-weight:900;
+.logo-mini {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
-.hero p{
-color:#aaa;
-font-size:15px;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 22px;
+    font-size: 14px;
 }
 
-.products{
-max-width:600px;
-margin:auto;
-padding:20px;
+nav a:hover {
+    color: #ff6500;
 }
 
-.card{
-background:#151515;
-border:1px solid #292929;
-border-radius:18px;
-overflow:hidden;
-margin-bottom:25px;
+.hero {
+    max-width: 1100px;
+    margin: auto;
+    padding: 55px 20px 45px;
+    text-align: center;
 }
 
-.product-image{
-width:100%;
-height:300px;
-object-fit:contain;
-background:#fff;
-display:block;
+.logo {
+    width: 180px;
+    max-width: 65%;
+    border-radius: 8px;
+    margin-bottom: 25px;
 }
 
-.info{
-padding:20px;
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
 }
 
-.badge{
-color:#ff5b00;
-font-size:12px;
-font-weight:bold;
+.hero h1 span {
+    color: #ff6500;
 }
 
-h2{
-font-size:23px;
-margin:8px 0;
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.7;
 }
 
-.description{
-color:#aaa;
-line-height:1.5;
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    background: #ff6500;
+    color: white;
+    text-decoration: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
 }
 
-.price{
-font-size:30px;
-font-weight:900;
-margin:18px 0;
+.button:hover {
+    background: #ff7b24;
 }
 
-button{
-width:100%;
-border:0;
-border-radius:12px;
-padding:16px;
-background:#ff5b00;
-color:white;
-font-size:17px;
-font-weight:900;
+.section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
 }
 
-button:active{
-transform:scale(.98);
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
-.cart{
-position:fixed;
-bottom:12px;
-left:12px;
-right:12px;
-background:#171717;
-border:1px solid #333;
-border-radius:15px;
-padding:12px 15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 5px 30px #000;
+.section-subtitle {
+    text-align: center;
+    color: #999;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
 }
 
-.cart button{
-width:auto;
-padding:11px 18px;
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
-footer{
-text-align:center;
-padding:70px 20px 100px;
-color:#666;
+.benefit {
+    background: #141414;
+    border: 1px solid #292929;
+    padding: 25px 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.benefit-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.benefit h3 {
+    margin-bottom: 8px;
+}
+
+.benefit p {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.about {
+    background: #111;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about p {
+    color: #aaa;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.product {
+    background: #141414;
+    border: 1px solid #292929;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.product img {
+    width: 100%;
+    height: 330px;
+    object-fit: contain;
+    background: white;
+    display: block;
+}
+
+.product-info {
+    padding: 22px;
+}
+
+.badge {
+    color: #ff6500;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.product h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.product p {
+    color: #999;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.cart-btn {
+    width: 100%;
+    border: none;
+    background: #ff6500;
+    color: white;
+    padding: 14px;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cart-btn:hover {
+    background: #ff7b24;
+}
+
+.cart {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    background: #ff6500;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    z-index: 200;
+    box-shadow: 0 5px 25px rgba(0,0,0,.5);
+}
+
+.contact {
+    text-align: center;
+    background: #111;
+    border-top: 1px solid #222;
+}
+
+.contact p {
+    color: #aaa;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #666;
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px;
+    }
+
+    .nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding-top: 40px;
+    }
+
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .benefits {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product img {
+        height: 280px;
+    }
 }
 </style>
 </head>
@@ -146,172 +315,272 @@ color:#666;
 <body>
 
 <header>
+    <div class="nav">
 
-<img
-class="logo"
-src="Screenshot_20260821_205135_ChatGPT.jpg"
-alt="BLACKDETAIL">
+        <div class="logo-mini">
+            UNIQUE AUTO DETAILING
+        </div>
 
-<div class="subtitle">
-AUTO DETAILING • CLEAN • PRO
-</div>
+        <nav>
+            <a href="#start">START</a>
+            <a href="#o-nas">O NAS</a>
+            <a href="#asortyment">ASORTYMENT</a>
+            <a href="#kontakt">KONTAKT</a>
+        </nav>
 
+    </div>
 </header>
 
-<section class="hero">
 
-<h1>DETALING ZACZYNA SIĘ TUTAJ</h1>
+<section class="hero" id="start">
 
-<p>
-Profesjonalne akcesoria do pielęgnacji Twojego auta.
-</p>
+    <img
+        class="logo"
+        src="Screenshot_20260821_205135_ChatGPT.jpg"
+        alt="Unique Auto Detailing">
+
+    <h1>
+        DETAILING ZACZYNA SIĘ <span>TUTAJ</span>
+    </h1>
+
+    <p>
+        Zadbane auto to nie tylko wygląd.
+        To dbałość o każdy szczegół, odpowiednie akcesoria
+        i przyjemność z jazdy samochodem, który naprawdę dobrze się prezentuje.
+    </p>
+
+    <a class="button" href="#asortyment">
+        🛒 ZOBACZ ASORTYMENT
+    </a>
 
 </section>
 
-<div class="products">
 
-<!-- PĘDZLE -->
+<section class="section">
 
-<div class="card">
+    <h2 class="section-title">
+        Dlaczego warto dbać o auto?
+    </h2>
 
-<img
-class="product-image"
-src="Screenshot_20260821_205326_Allegro.jpg"
-alt="Zestaw 5 pędzli detailingowych">
+    <p class="section-subtitle">
+        Regularna pielęgnacja samochodu pozwala utrzymać jego wygląd
+        i sprawia, że codzienna jazda daje jeszcze więcej satysfakcji.
+    </p>
 
-<div class="info">
+    <div class="benefits">
 
-<div class="badge">
-BLACKDETAIL • BESTSELLER
-</div>
+        <div class="benefit">
+            <div class="benefit-icon">✨</div>
+            <h3>Wygląd</h3>
+            <p>
+                Auto wygląda świeżo i zadbanie każdego dnia.
+            </p>
+        </div>
 
-<h2>
-Zestaw 5 pędzli detailingowych
-</h2>
+        <div class="benefit">
+            <div class="benefit-icon">🛡️</div>
+            <h3>Ochrona</h3>
+            <p>
+                Odpowiednia pielęgnacja pomaga chronić powierzchnie auta.
+            </p>
+        </div>
 
-<div class="description">
-5 pędzli do dokładnego czyszczenia wnętrza,
-plastików, felg oraz trudno dostępnych miejsc.
-</div>
+        <div class="benefit">
+            <div class="benefit-icon">🧽</div>
+            <h3>Czystość</h3>
+            <p>
+                Dobre akcesoria ułatwiają dokładne mycie samochodu.
+            </p>
+        </div>
 
-<div class="price">
-25,00 zł
-</div>
+        <div class="benefit">
+            <div class="benefit-icon">❤️</div>
+            <h3>Satysfakcja</h3>
+            <p>
+                Bo zadbane auto po prostu cieszy bardziej.
+            </p>
+        </div>
 
-<button onclick="addToCart('Zestaw 5 pędzli detailingowych',25)">
-DODAJ DO KOSZYKA
-</button>
+    </div>
 
-</div>
-</div>
+</section>
 
 
-<!-- RĘKAWICA -->
+<section class="about" id="o-nas">
 
-<div class="card">
+    <div class="section">
 
-<img
-class="product-image"
-src="file_0000000031a4824683761b6dd9798797.png"
-alt="Rękawica z mikrofibry">
+        <div class="about-content">
 
-<div class="info">
+            <h2 class="section-title">
+                🚗 Dbaj o każdy szczegół
+            </h2>
 
-<div class="badge">
-BLACKDETAIL • DETAILING
-</div>
+            <p>
+                Detailing samochodowy to dbałość o detale.
+                Nie musisz być profesjonalistą, żeby zadbać o swoje auto.
+                Wystarczy odpowiedni produkt, trochę czasu i chęć,
+                żeby samochód wyglądał naprawdę dobrze.
+            </p>
 
-<h2>
-Rękawica z mikrofibry
-</h2>
+            <br>
 
-<div class="description">
-Miękka rękawica do mycia auta.
-Idealna do pielęgnacji lakieru i dokładnego
-usuwania zabrudzeń.
-</div>
+            <p>
+                W UNIQUE AUTO DETAILING znajdziesz praktyczne akcesoria
+                do pielęgnacji samochodu, które możesz wykorzystać
+                podczas codziennego mycia i detailingu.
+            </p>
 
-<div class="price">
-25,00 zł
-</div>
+        </div>
 
-<button onclick="addToCart('Rękawica z mikrofibry',25)">
-DODAJ DO KOSZYKA
-</button>
+    </div>
 
-</div>
-</div>
+</section>
 
-</div>
 
-<div class="cart">
+<section class="section" id="asortyment">
 
-<div>
-🛒 <span id="cartCount">Koszyk: 0 szt.</span>
-</div>
+    <h2 class="section-title">
+        🛍️ ASORTYMENT
+    </h2>
 
-<button onclick="showCart()">
-KOSZYK
-</button>
+    <p class="section-subtitle">
+        Wybierz akcesoria i zacznij dbać o swoje auto.
+    </p>
 
-</div>
+
+    <div class="products">
+
+
+        <!-- PĘDZLE -->
+
+        <div class="product">
+
+            <img
+                src="Screenshot_20260821_205326_Allegro.jpg"
+                alt="Zestaw pędzli detailingowych">
+
+            <div class="product-info">
+
+                <div class="badge">
+                    BLACKDETAIL • BESTSELLER
+                </div>
+
+                <h3>
+                    Zestaw 5 pędzli detailingowych
+                </h3>
+
+                <p>
+                    Praktyczny zestaw pędzli do dokładnego czyszczenia
+                    wnętrza, plastików, zakamarków i elementów samochodu.
+                </p>
+
+                <div class="price">
+                    25,00 zł
+                </div>
+
+                <button
+                    class="cart-btn"
+                    onclick="addToCart('Zestaw 5 pędzli detailingowych', 25)">
+                    🛒 DODAJ DO KOSZYKA
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- RĘKAWICA -->
+
+        <div class="product">
+
+            <img
+                src="file_0000000031a4824683761b6dd9798797.png"
+                alt="Rękawica z mikrofibry">
+
+            <div class="product-info">
+
+                <div class="badge">
+                    BLACKDETAIL • POLECANA
+                </div>
+
+                <h3>
+                    Rękawica z mikrofibry
+                </h3>
+
+                <p>
+                    Wygodna rękawica do mycia samochodu.
+                    Pomaga dokładnie usuwać zabrudzenia
+                    podczas pielęgnacji auta.
+                </p>
+
+                <div class="price">
+                    25,00 zł
+                </div>
+
+                <button
+                    class="cart-btn"
+                    onclick="addToCart('Rękawica z mikrofibry', 25)">
+                    🛒 DODAJ DO KOSZYKA
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="contact section" id="kontakt">
+
+    <h2 class="section-title">
+        📩 KONTAKT
+    </h2>
+
+    <p>
+        Masz pytanie dotyczące produktu?
+    </p>
+
+    <p>
+        Napisz do nas i chętnie pomożemy.
+    </p>
+
+</section>
+
 
 <footer>
-
-BLACKDETAIL<br><br>
-Profesjonalne akcesoria do auto detailingu<br><br>
-© 2026 BLACKDETAIL
-
+    © 2026 UNIQUE AUTO DETAILING
+    <br>
+    Detailing • Clean • Pro
 </footer>
+
+
+<div class="cart">
+    🛒 Koszyk: <span id="cartCount">0</span>
+</div>
+
 
 <script>
 
-let cart=[];
+let cartCount = 0;
 
-function addToCart(name,price){
+function addToCart(name, price) {
 
-cart.push({
-name:name,
-price:price
-});
+    cartCount++;
 
-document.getElementById("cartCount").innerText=
-"Koszyk: "+cart.length+" szt.";
+    document.getElementById("cartCount").innerText = cartCount;
 
-alert("Dodano do koszyka: "+name);
-}
-
-function showCart(){
-
-if(cart.length===0){
-
-alert("Koszyk jest pusty.");
-
-return;
-}
-
-let text="ZAMÓWIENIE\\n\\n";
-let total=0;
-
-cart.forEach(function(item,index){
-
-text+=(index+1)+". "+
-item.name+
-" - "+
-item.price.toFixed(2)+
-" zł\\n";
-
-total+=item.price;
-
-});
-
-text+="\\nRAZEM: "+total.toFixed(2)+" zł";
-
-alert(text);
-
+    alert(
+        name +
+        " został dodany do koszyka.\n\nCena: " +
+        price.toFixed(2) +
+        " zł"
+    );
 }
 
 </script>
 
 </body>
-</html>
+          </html>
