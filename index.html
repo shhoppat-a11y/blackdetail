@@ -1,13 +1,94 @@
-<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>BLACKDETAIL</title>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BLACKDETAIL | Auto Detailing</title>
 <style>
-:root{--bg:#090909;--card:#121212;--gold:#d8a72d;--text:#f5f5f5;--muted:#aaa}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif}.wrap{max-width:1100px;margin:auto;padding:0 20px}nav{height:72px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #252525}.logo{font-weight:900;letter-spacing:2px}.logo span{color:var(--gold)}button{cursor:pointer}.cart{background:#111;color:#fff;border:1px solid #333;border-radius:12px;padding:10px 14px}.hero{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;padding:55px 0}.badge{display:inline-block;background:var(--gold);color:#111;font-weight:800;padding:7px 10px;border-radius:99px;font-size:12px}h1{font-size:clamp(42px,7vw,70px);line-height:.95;margin:18px 0}h2{font-size:34px}p{color:var(--muted);line-height:1.55}.price{font-size:34px;font-weight:900;margin:18px 0}.old{text-decoration:line-through;color:#777;font-size:15px}.cta{background:var(--gold);color:#111;border:0;border-radius:12px;padding:16px 22px;font-weight:900;font-size:16px}.card{background:#111;border:1px solid #292929;border-radius:22px;padding:22px}.card img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:15px}.features,.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature,.review{background:var(--card);border:1px solid #252525;border-radius:16px;padding:20px}.modal{display:none;position:fixed;inset:0;background:#000c;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.box{background:#111;border:1px solid #333;border-radius:20px;padding:25px;max-width:520px;width:100%}.close{float:right;background:none;border:0;color:#aaa;font-size:25px}input{width:100%;padding:13px;margin:6px 0 12px;background:#080808;color:#fff;border:1px solid #333;border-radius:9px}footer{margin-top:60px;padding:30px 0;border-top:1px solid #222;color:#777;font-size:13px}@media(max-width:750px){.hero{grid-template-columns:1fr}.hero .card{order:-1}.features,.grid{grid-template-columns:1fr}}
-</style></head><body><div class="wrap">
-<nav><div class="logo">BLACK<span>DETAIL</span></div><button class="cart" onclick="openCart()">🛒 Koszyk <b id="count">0</b></button></nav>
-<section class="hero"><div><span class="badge">BLACKDETAIL • NOWOŚĆ</span><h1>Czyste auto.<br><span style="color:var(--gold)">Każdy detal.</span></h1><p>5-elementowy zestaw pędzli detailingowych do nawiewów, szczelin, kokpitu, felg i trudno dostępnych miejsc.</p><div class="price">29,99 zł <span class="old">39,99 zł</span></div><button class="cta" onclick="add()">DODAJ DO KOSZYKA</button></div>
-<div class="card"><img src="product.jpg" alt="Zestaw 5 pędzli detailingowych"></div></section>
-<div class="features"><div class="feature"><b>🧽 5 rozmiarów</b><p>Do różnych zakamarków auta.</p></div><div class="feature"><b>✨ Miękkie włosie</b><p>Do delikatnych powierzchni.</p></div><div class="feature"><b>🚗 Uniwersalne</b><p>Wnętrze, felgi i detale.</p></div></div>
-<section><h2>BLACKDETAIL</h2><p>Sprytne akcesoria do pielęgnacji auta. Zaczynamy od prostych produktów, które robią widoczną różnicę.</p><div class="grid"><div class="review"><b>„Dociera w szczeliny”</b><p>Idealne do nawiewów i trudno dostępnych miejsc.</p></div><div class="review"><b>„5 pędzli w zestawie”</b><p>Jeden komplet do wielu zastosowań.</p></div><div class="review"><b>„Do garażu i auta”</b><p>Mały zestaw zawsze pod ręką.</p></div></div></section>
-<footer>© 2026 BLACKDETAIL • Sklep demonstracyjny • Regulamin • Zwroty • Polityka prywatności</footer></div>
-<div class="modal" id="modal"><div class="box"><button class="close" onclick="closeCart()">×</button><h2>Twoje zamówienie</h2><div id="cart"></div><div id="form" style="display:none"><label>Imię i nazwisko</label><input placeholder="Jan Kowalski"><label>E-mail</label><input type="email" placeholder="jan@email.pl"><label>Adres</label><input placeholder="ul. Przykładowa 1, 43-000 Miasto"><button class="cta" style="width:100%" onclick="alert('To wersja demonstracyjna. Płatności nie są jeszcze podłączone.')">ZŁÓŻ ZAMÓWIENIE</button><p style="font-size:12px">Wersja demonstracyjna, bez prawdziwej płatności.</p></div></div></div>
-<script>let q=0;function add(){q++;openCart()}function openCart(){modal.classList.add('open');count.textContent=q;cart.innerHTML=q?`<p><b>5 pędzli detailingowych</b><br>${q} × 29,99 zł = <b>${(q*29.99).toFixed(2).replace('.',',')} zł</b></p>`:'Koszyk pusty';form.style.display=q?'block':'none'}function closeCart(){modal.classList.remove('open')}</script>
-</body></html>
+*{box-sizing:border-box}
+body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 18px;text-align:center;border-bottom:1px solid #222}
+.logo{font-size:28px;font-weight:900;letter-spacing:4px}
+.sub{color:#888;margin-top:5px;font-size:12px;letter-spacing:2px}
+.hero{padding:35px 20px;text-align:center;background:linear-gradient(145deg,#111,#050505)}
+.hero h1{font-size:34px;margin:0 0 12px;font-weight:900}
+.hero p{color:#aaa;font-size:16px}
+.products{padding:20px;max-width:600px;margin:auto}
+.card{background:#141414;border:1px solid #292929;border-radius:18px;margin-bottom:22px;overflow:hidden}
+.pic{height:250px;display:flex;align-items:center;justify-content:center;background:#f4f4f4}
+.pic svg{width:85%;height:85%}
+.info{padding:20px}
+.tag{color:#ff5b00;font-size:12px;font-weight:bold}
+h2{margin:7px 0;font-size:23px}
+.desc{color:#aaa;line-height:1.5}
+.price{font-size:28px;font-weight:900;margin:18px 0}
+button{width:100%;padding:16px;border:0;border-radius:12px;background:#ff5b00;color:white;font-size:17px;font-weight:900}
+button:active{transform:scale(.98)}
+.cart{position:fixed;bottom:15px;left:15px;right:15px;background:#171717;border:1px solid #333;border-radius:15px;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 5px 30px #000}
+.cart b{font-size:16px}
+.cart button{width:auto;padding:11px 20px}
+footer{text-align:center;padding:50px 20px;color:#666}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">BLACKDETAIL</div>
+<div class="sub">AUTO DETAILING • CLEAN • PRO</div>
+</header>
+
+<section class="hero">
+<h1>DETALING ZACZYNA SIĘ TUTAJ</h1>
+<p>Profesjonalne akcesoria do pielęgnacji Twojego auta.</p>
+</section>
+
+<div class="products">
+
+<div class="card">
+<div class="pic">
+<svg viewBox="0 0 400 250">
+<rect x="40" y="105" width="300" height="38" rx="19" fill="#111"/>
+<rect x="65" y="91" width="230" height="66" rx="25" fill="#ff5b00"/>
+<path d="M75 100l-18-25M100 96L88 65M125 94l-5-34M150 93V55M175 93l6-38M200 94l14-37M225 98l20-32M250 102l27-27" stroke="#111" stroke-width="9" stroke-linecap="round"/>
+<rect x="292" y="112" width="70" height="25" rx="12" fill="#222"/>
+</svg>
+</div>
+<div class="info">
+<div class="tag">BLACKDETAIL • BESTSELLER</div>
+<h2>Zestaw 5 pędzli detailingowych</h2>
+<div class="desc">5 różnych pędzli do dokładnego czyszczenia wnętrza, plastików, felg i trudno dostępnych miejsc.</div>
+<div class="price">25,00 zł</div>
+<button onclick="add('Pędzle detailingowe',25)">DODAJ DO KOSZYKA</button>
+</div>
+</div>
+
+<div class="card">
+<div class="pic">
+<svg viewBox="0 0 400 250">
+<path d="M90 210C55 170 65 105 95 65C115 38 145 45 150 70L158 105V48C158 25 190 25 190 50V103V35C190 13 222 15 222 38V105V48C222 27 253 28 253 50V116L270 75C280 52 310 62 300 88L280 145C267 185 235 215 190 225C150 233 112 226 90 210Z" fill="#ff5b00"/>
+<path d="M100 205C135 220 190 218 225 195" fill="none" stroke="#111" stroke-width="12"/>
+<circle cx="330" cy="45" r="25" fill="#111"/>
+<path d="M319 45h22M330 34v22" stroke="#ff5b00" stroke-width="5"/>
+</svg>
+</div>
+<div class="info">
+<div class="tag">BLACKDETAIL • DETAILING</div>
+<h2>Rękawica z mikrofibry</h2>
+<div class="desc">Miękka rękawica do mycia auta. Zbiera brud i pomaga bezpiecznie pielęgnować lakier.</div>
+<div class="price">25,00 zł</div>
+<button onclick="add('Rękawica z mikrofibry',25)">DODAJ DO KOSZYKA</button>
+</div>
+</div>
+
+</div>
+
+<div class="cart">
+<div>🛒 <b id="count">Koszyk: 0 szt.</b></div>
+<button onclick="checkout()">KOSZYK</button>
+</div>
+
+<footer>
+BLACKDETAIL<br><br>
+Akcesoria do auto detailingu<br>
+© 2026 BLACKDETAIL
+</footer>
