@@ -4,19 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>ELVARET DETAILING | Bieruń • Tychy</title>
-
-  <meta
-    name="description"
-    content="ELVARET DETAILING - detailing samochodowy, korekta lakieru, renowacja lamp, detailing wnętrza i mycie detailingowe. Bieruń, Tychy i okolice."
-  >
+  <title>ELVARET DETAILING | Detailing Bieruń • Tychy</title>
+  <meta name="description" content="ELVARET DETAILING - detailing samochodowy, korekta lakieru, renowacja lamp, detailing wnętrza i mycie detailingowe. Bieruń, Tychy i okolice.">
 
   <style>
-
-    /* ================================
-       RESET
-    ================================= */
-
     * {
       margin: 0;
       padding: 0;
@@ -28,9 +19,9 @@
     }
 
     body {
-      background: #050505;
-      color: #ffffff;
       font-family: Arial, Helvetica, sans-serif;
+      background: #070807;
+      color: #fff;
       overflow-x: hidden;
     }
 
@@ -39,831 +30,495 @@
       color: inherit;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
     }
 
+    /* =========================
+       NAVBAR
+    ========================= */
 
-    /* ================================
-       KOLOR MARKI
-    ================================= */
-
-    :root {
-      --green: #b7ff00;
-      --green-dark: #8ec900;
-      --black: #050505;
-      --dark: #0b0b0b;
-      --gray: #858585;
-      --border: #242424;
-    }
-
-
-    /* ================================
-       HEADER
-    ================================= */
-
-    header {
-      height: 82px;
-      padding: 0 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      background: rgba(5, 5, 5, 0.96);
-
-      border-bottom: 1px solid var(--border);
-
+    nav {
       position: sticky;
       top: 0;
       z-index: 1000;
+      background: rgba(5, 6, 5, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #222;
     }
 
-    .header-logo {
-      width: 155px;
-    }
-
-    .header-logo img {
-      width: 100%;
-    }
-
-    nav {
+    .nav-inner {
+      min-height: 82px;
       display: flex;
       align-items: center;
-      gap: 30px;
+      justify-content: space-between;
+      gap: 25px;
+    }
 
-      font-size: 12px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      font-size: 18px;
+    }
+
+    .logo img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 14px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      color: #ccc;
     }
 
-    nav a {
-      color: #777;
-      transition: 0.3s;
+    .nav-links a:hover {
+      color: #aaff00;
     }
 
-    nav a:hover,
-    nav a.active {
-      color: var(--green);
+    .nav-button {
+      background: #aaff00;
+      color: #000;
+      padding: 13px 20px;
+      border-radius: 6px;
+      font-weight: 900;
     }
 
-    .mobile-menu {
-      display: none;
-      color: var(--green);
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-
-    /* ================================
+    /* =========================
        HERO
-    ================================= */
+    ========================= */
 
     .hero {
-      min-height: calc(100vh - 82px);
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      min-height: 720px;
+      display: flex;
       align-items: center;
-
-      gap: 60px;
-
-      padding: 70px 5%;
-
       position: relative;
       overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 40%, rgba(150,255,0,.16), transparent 35%),
+        linear-gradient(135deg, #080908 0%, #0d1108 100%);
     }
 
     .hero::after {
       content: "";
-
       position: absolute;
-
-      width: 600px;
-      height: 600px;
-
-      right: -250px;
-      top: 50px;
-
-      background: var(--green);
-
-      opacity: 0.08;
-
-      filter: blur(140px);
-
-      border-radius: 50%;
-
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(5,7,5,.98) 0%,
+        rgba(5,7,5,.84) 42%,
+        rgba(5,7,5,.25) 100%
+      );
       pointer-events: none;
     }
-
-
-    /* ================================
-       HERO TEXT
-    ================================= */
 
     .hero-content {
       position: relative;
       z-index: 2;
+      width: 55%;
+      padding: 80px 0;
     }
 
     .location {
-      color: var(--green);
-
+      color: #aaff00;
       font-size: 13px;
-      font-weight: 800;
-
       letter-spacing: 5px;
-
-      margin-bottom: 30px;
-
-      text-transform: uppercase;
+      font-weight: 900;
+      margin-bottom: 28px;
     }
 
-    .hero h1 {
-      font-size: clamp(55px, 7vw, 100px);
-
-      line-height: 0.9;
-
+    h1 {
+      font-size: clamp(55px, 8vw, 105px);
+      line-height: .88;
+      font-weight: 950;
       letter-spacing: -5px;
-
-      font-weight: 900;
-
-      text-transform: uppercase;
-
       margin-bottom: 35px;
     }
 
-    .hero h1 span {
-      color: var(--green);
+    h1 span {
+      color: #aaff00;
       display: block;
     }
 
-    .hero-description {
-      max-width: 570px;
-
-      color: #929292;
-
-      font-size: 17px;
-
+    .hero-text {
+      max-width: 620px;
+      color: #aaa;
+      font-size: 18px;
       line-height: 1.7;
-
-      margin-bottom: 38px;
+      margin-bottom: 35px;
     }
-
-
-    /* ================================
-       BUTTONS
-    ================================= */
 
     .buttons {
       display: flex;
-      gap: 14px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
     .btn {
-      min-width: 190px;
-
-      padding: 18px 28px;
-
-      border: 1px solid var(--green);
-
-      font-size: 12px;
-
-      font-weight: 800;
-
-      letter-spacing: 1.5px;
-
-      text-align: center;
-
-      transition: 0.3s;
-
-      text-transform: uppercase;
+      padding: 17px 25px;
+      border-radius: 6px;
+      font-weight: 900;
+      display: inline-block;
     }
 
     .btn-primary {
-      background: var(--green);
-      color: #050505;
+      background: #aaff00;
+      color: #000;
     }
 
     .btn-primary:hover {
-      background: #d3ff68;
-      transform: translateY(-3px);
+      background: #c5ff55;
     }
 
-    .btn-outline {
-      color: #ffffff;
+    .btn-secondary {
+      border: 1px solid #444;
+      color: #fff;
     }
 
-    .btn-outline:hover {
-      background: var(--green);
-      color: #050505;
-      transform: translateY(-3px);
+    .btn-secondary:hover {
+      border-color: #aaff00;
+      color: #aaff00;
     }
 
-
-    /* ================================
-       LOGO PANEL
-    ================================= */
-
-    .hero-visual {
-      position: relative;
-      z-index: 2;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .logo-box {
-      width: min(590px, 100%);
-
-      aspect-ratio: 1 / 1;
-
-      background:
-        radial-gradient(
-          circle,
-          rgba(183,255,0,0.13),
-          rgba(0,0,0,0) 65%
-        );
-
-      border: 1px solid #2c2c2c;
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      position: relative;
-
-      overflow: hidden;
-    }
-
-    .logo-box::before {
-      content: "";
-
+    .hero-image {
       position: absolute;
-
-      width: 70%;
-      height: 70%;
-
-      background: var(--green);
-
-      opacity: 0.07;
-
-      filter: blur(90px);
-
-      border-radius: 50%;
-    }
-
-    .main-logo {
-      width: 90%;
-      max-width: 520px;
-
-      position: relative;
-      z-index: 2;
-
-      transition: 0.5s;
-    }
-
-    .logo-box:hover .main-logo {
-      transform: scale(1.03);
-    }
-
-
-    /* ================================
-       DECORACYJNE M5
-    ================================= */
-
-    .m5-background {
-      position: absolute;
-
-      left: 25%;
-      bottom: -120px;
-
-      font-size: 300px;
-
-      font-weight: 900;
-
-      color: transparent;
-
-      -webkit-text-stroke: 1px rgba(183,255,0,0.05);
-
-      pointer-events: none;
-
+      right: 0;
+      top: 0;
+      width: 52%;
+      height: 100%;
       z-index: 1;
     }
 
-
-    /* ================================
-       FEATURES
-    ================================= */
-
-    .features {
-      margin: 0 4%;
-
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      background: #090909;
-
-      border: 1px solid var(--border);
-
-      position: relative;
-
-      z-index: 5;
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
-    .feature {
-      padding: 38px 25px;
+    /* =========================
+       SECTION
+    ========================= */
 
-      text-align: center;
-
-      border-right: 1px solid var(--border);
-    }
-
-    .feature:last-child {
-      border-right: none;
-    }
-
-    .feature-icon {
-      color: var(--green);
-
-      font-size: 32px;
-
-      margin-bottom: 18px;
-    }
-
-    .feature h3 {
-      font-size: 13px;
-
-      letter-spacing: 2px;
-
-      margin-bottom: 12px;
-    }
-
-    .feature p {
-      color: #707070;
-
-      font-size: 13px;
-
-      line-height: 1.5;
-    }
-
-
-    /* ================================
-       SEKCJA O NAS
-    ================================= */
-
-    .about {
-      padding: 120px 5%;
-
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 80px;
-
-      border-bottom: 1px solid var(--border);
+    section {
+      padding: 100px 0;
     }
 
     .section-label {
-      color: var(--green);
-
+      color: #aaff00;
       font-size: 12px;
-
-      font-weight: 800;
-
+      font-weight: 900;
       letter-spacing: 4px;
+      margin-bottom: 18px;
+    }
 
+    .section-title {
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: .95;
+      letter-spacing: -3px;
       margin-bottom: 20px;
     }
 
-    .about h2 {
-      font-size: clamp(40px, 5vw, 70px);
-
-      line-height: 0.95;
-
-      text-transform: uppercase;
-
-      margin-bottom: 30px;
+    .section-title span {
+      color: #aaff00;
     }
 
-    .about h2 span {
-      color: var(--green);
-    }
-
-    .about-text {
-      color: #888;
-
-      font-size: 16px;
-
-      line-height: 1.8;
-    }
-
-    .about-card {
-      background: #0b0b0b;
-
-      border: 1px solid var(--border);
-
-      padding: 45px;
-    }
-
-    .about-card h3 {
-      color: var(--green);
-
-      font-size: 20px;
-
-      margin-bottom: 15px;
-    }
-
-    .about-card p {
-      color: #777;
-
+    .section-description {
+      color: #999;
+      max-width: 700px;
       line-height: 1.7;
+      font-size: 17px;
     }
 
-
-    /* ================================
-       USŁUGI
-    ================================= */
+    /* =========================
+       SERVICES
+    ========================= */
 
     .services {
-      padding: 110px 5%;
+      background: #090b09;
     }
 
-    .services-title {
-      margin-bottom: 50px;
-    }
-
-    .services-title h2 {
-      font-size: clamp(40px, 5vw, 70px);
-
-      text-transform: uppercase;
-
-      line-height: 1;
-    }
-
-    .services-title h2 span {
-      color: var(--green);
-    }
-
-    .service-grid {
+    .services-grid {
       display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      gap: 15px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 55px;
     }
 
     .service {
+      background: #101210;
+      border: 1px solid #242724;
+      padding: 35px;
       min-height: 250px;
-
-      background: #0a0a0a;
-
-      border: 1px solid var(--border);
-
-      padding: 30px;
-
-      transition: 0.3s;
-
-      position: relative;
-
-      overflow: hidden;
+      transition: .25s;
     }
 
     .service:hover {
-      border-color: var(--green);
-
       transform: translateY(-5px);
+      border-color: #aaff00;
     }
 
     .service-number {
-      color: var(--green);
-
-      font-size: 13px;
-
-      font-weight: bold;
-
-      margin-bottom: 50px;
+      color: #aaff00;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 45px;
     }
 
     .service h3 {
-      font-size: 19px;
-
+      font-size: 25px;
       margin-bottom: 15px;
     }
 
     .service p {
-      color: #707070;
-
-      font-size: 14px;
-
+      color: #888;
       line-height: 1.6;
     }
 
+    /* =========================
+       ABOUT
+    ========================= */
 
-    /* ================================
-       CENNIK
-    ================================= */
-
-    .pricing {
-      padding: 100px 5%;
-
-      background: #080808;
-
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    .about {
+      background: #060706;
     }
 
-    .pricing h2 {
-      font-size: clamp(40px, 5vw, 70px);
-
-      text-transform: uppercase;
-
-      margin-bottom: 50px;
-    }
-
-    .pricing h2 span {
-      color: var(--green);
-    }
-
-    .price-grid {
+    .about-grid {
       display: grid;
-
-      grid-template-columns: repeat(3, 1fr);
-
-      gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
     }
 
-    .price-card {
-      background: #050505;
-
-      border: 1px solid var(--border);
-
-      padding: 35px;
-
-      transition: 0.3s;
+    .about-box {
+      border: 1px solid #292d29;
+      padding: 45px;
+      background: #0c0f0c;
     }
 
-    .price-card:hover {
-      border-color: var(--green);
+    .about-box strong {
+      color: #aaff00;
+      font-size: 48px;
+      display: block;
+      margin-bottom: 10px;
     }
 
-    .price-card h3 {
-      margin-bottom: 15px;
+    .about-box p {
+      color: #aaa;
+      line-height: 1.7;
     }
 
-    .price {
-      color: var(--green);
+    /* =========================
+       PROCESS
+    ========================= */
 
-      font-size: 32px;
+    .process {
+      background: #0a0d09;
+    }
 
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      margin-top: 55px;
+    }
+
+    .step {
+      border-top: 2px solid #aaff00;
+      padding-top: 25px;
+    }
+
+    .step-number {
+      font-size: 42px;
       font-weight: 900;
-
+      color: #333;
       margin-bottom: 20px;
     }
 
-    .price-card p {
-      color: #777;
+    .step h3 {
+      margin-bottom: 12px;
+    }
 
-      font-size: 14px;
-
+    .step p {
+      color: #888;
       line-height: 1.6;
     }
 
+    /* =========================
+       CTA
+    ========================= */
 
-    /* ================================
-       KONTAKT
-    ================================= */
+    .cta {
+      background:
+        radial-gradient(circle at center, rgba(170,255,0,.12), transparent 50%),
+        #0b0e0b;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(42px, 7vw, 85px);
+      line-height: .9;
+      letter-spacing: -4px;
+      margin-bottom: 25px;
+    }
+
+    .cta h2 span {
+      color: #aaff00;
+    }
+
+    .cta p {
+      color: #999;
+      max-width: 650px;
+      margin: 0 auto 35px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
 
     .contact {
-      padding: 120px 5%;
+      background: #070807;
+    }
 
+    .contact-grid {
       display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 80px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 45px;
     }
 
-    .contact h2 {
-      font-size: clamp(45px, 5vw, 75px);
-
-      line-height: 0.95;
-
-      text-transform: uppercase;
-
-      margin-bottom: 30px;
+    .contact-box {
+      padding: 30px;
+      border: 1px solid #272a27;
+      background: #0d100d;
     }
 
-    .contact h2 span {
-      color: var(--green);
-    }
-
-    .contact-info {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 25px;
-    }
-
-    .contact-item {
-      border-bottom: 1px solid var(--border);
-
-      padding-bottom: 20px;
-    }
-
-    .contact-item small {
-      color: var(--green);
-
+    .contact-box span {
+      color: #aaff00;
       display: block;
-
-      font-size: 10px;
-
-      font-weight: bold;
-
+      font-size: 12px;
+      font-weight: 900;
       letter-spacing: 2px;
-
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
-    .contact-item strong {
-      font-size: 18px;
+    .contact-box strong {
+      font-size: 20px;
     }
 
-
-    /* ================================
+    /* =========================
        FOOTER
-    ================================= */
+    ========================= */
 
     footer {
-      padding: 35px 5%;
-
-      border-top: 1px solid var(--border);
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 30px;
-    }
-
-    .footer-logo {
-      width: 145px;
-    }
-
-    .footer-links {
-      display: flex;
-
-      gap: 25px;
-
-      flex-wrap: wrap;
-
+      border-top: 1px solid #222;
+      padding: 30px 0;
       color: #666;
-
-      font-size: 11px;
-
-      font-weight: bold;
-
-      letter-spacing: 1px;
+      font-size: 13px;
     }
 
-    .footer-links a:hover {
-      color: var(--green);
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    .copyright {
-      color: #444;
-
-      font-size: 10px;
+    .green {
+      color: #aaff00;
     }
 
-
-    /* ================================
+    /* =========================
        MOBILE
-    ================================= */
+    ========================= */
 
-    @media (max-width: 950px) {
+    @media (max-width: 850px) {
 
-      header {
-        height: 72px;
+      .nav-inner {
+        min-height: 70px;
       }
 
-      nav {
+      .nav-links {
         display: none;
       }
 
-      .mobile-menu {
-        display: block;
+      .logo img {
+        width: 45px;
+        height: 45px;
       }
 
       .hero {
-        min-height: auto;
-
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-        padding: 45px 25px 70px;
+        min-height: 760px;
+        align-items: flex-end;
       }
 
-      .hero-visual {
-        order: -1;
-      }
-
-      .logo-box {
+      .hero-image {
         width: 100%;
+        height: 58%;
+        top: 0;
+        opacity: .65;
       }
 
-      .hero h1 {
-        font-size: clamp(48px, 14vw, 75px);
+      .hero::after {
+        background: linear-gradient(
+          180deg,
+          rgba(5,7,5,.2) 0%,
+          rgba(5,7,5,.65) 45%,
+          #070807 78%
+        );
+      }
 
+      .hero-content {
+        width: 100%;
+        padding: 55px 0;
+      }
+
+      h1 {
+        font-size: clamp(50px, 16vw, 75px);
         letter-spacing: -3px;
       }
 
-      .hero-description {
+      .hero-text {
         font-size: 16px;
       }
 
-      .features {
-        grid-template-columns: 1fr 1fr;
-
-        margin: 0 20px;
-      }
-
-      .feature {
-        border-bottom: 1px solid var(--border);
-      }
-
-      .feature:nth-child(2) {
-        border-right: none;
-      }
-
-      .feature:nth-child(3),
-      .feature:nth-child(4) {
-        border-bottom: none;
-      }
-
-      .about,
-      .contact {
-        grid-template-columns: 1fr;
-
-        gap: 40px;
-
-        padding: 80px 25px;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .price-grid {
+      .services-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .services,
-      .pricing {
-        padding: 80px 25px;
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
       }
 
-      footer {
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .footer-inner {
         flex-direction: column;
-
-        align-items: flex-start;
       }
     }
 
-
-    @media (max-width: 550px) {
-
-      .header-logo {
-        width: 130px;
-      }
+    @media (max-width: 500px) {
 
       .hero {
-        padding-top: 30px;
-      }
-
-      .location {
-        font-size: 10px;
-
-        letter-spacing: 3px;
-      }
-
-      .hero h1 {
-        font-size: 52px;
-
-        letter-spacing: -3px;
-      }
-
-      .hero-description {
-        font-size: 15px;
-
-        line-height: 1.7;
+        min-height: 720px;
       }
 
       .buttons {
@@ -871,542 +526,350 @@
       }
 
       .btn {
+        text-align: center;
         width: 100%;
       }
 
-      .features {
-        grid-template-columns: 1fr;
-
-        margin: 0 15px;
-      }
-
-      .feature {
-        border-right: none !important;
-
-        border-bottom: 1px solid var(--border) !important;
-      }
-
-      .feature:last-child {
-        border-bottom: none !important;
-      }
-
-      .service-grid {
+      .process-grid {
         grid-template-columns: 1fr;
       }
 
-      .about-card {
-        padding: 30px;
-      }
-
-      .footer-links {
-        flex-direction: column;
-
-        gap: 15px;
-      }
-
-      .m5-background {
-        font-size: 160px;
-
-        left: 5%;
+      .service {
+        padding: 28px;
       }
     }
-
   </style>
 </head>
 
-
 <body>
 
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-  <!-- =====================================
-       HEADER
-  ====================================== -->
+  <nav>
+    <div class="container nav-inner">
 
-  <header>
+      <a href="#" class="logo">
+        <img src="logo.png" alt="ELVARET DETAILING">
+        <span>ELVARET DETAILING</span>
+      </a>
 
-    <a href="#" class="header-logo">
-      <img src="./logo.png" alt="ELVARET DETAILING">
-    </a>
+      <div class="nav-links">
+        <a href="#uslugi">Usługi</a>
+        <a href="#o-nas">O nas</a>
+        <a href="#proces">Jak działamy</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
 
-    <nav>
+      <a href="#kontakt" class="nav-button">
+        UMÓW WIZYTĘ
+      </a>
 
-      <a href="#" class="active">STRONA GŁÓWNA</a>
+    </div>
+  </nav>
 
-      <a href="#onas">O NAS</a>
 
-      <a href="#uslugi">USŁUGI</a>
+  <!-- =========================
+       HERO
+  ========================== -->
 
-      <a href="#cennik">CENNIK</a>
+  <header class="hero">
 
-      <a href="#realizacje">REALIZACJE</a>
-
-      <a href="#kontakt">KONTAKT</a>
-
-    </nav>
-
-    <div class="mobile-menu">
-      ☰
+    <div class="hero-image">
+      <img src="hero.jpg" alt="ELVARET DETAILING">
     </div>
 
+    <div class="container">
+
+      <div class="hero-content">
+
+        <div class="location">
+          BIERUŃ • TYCHY • OKOLICE
+        </div>
+
+        <h1>
+          DETAL ROBI
+          <span>RÓŻNICĘ.</span>
+        </h1>
+
+        <p class="hero-text">
+          ELVARET DETAILING to dokładna pielęgnacja samochodu
+          bez zbędnego nadęcia. Korekta lakieru, renowacja lamp,
+          detailing wnętrza i mycie detailingowe.
+        </p>
+
+        <div class="buttons">
+          <a href="#uslugi" class="btn btn-primary">
+            ZOBACZ USŁUGI
+          </a>
+
+          <a href="#kontakt" class="btn btn-secondary">
+            SKONTAKTUJ SIĘ
+          </a>
+        </div>
+
+      </div>
+
+    </div>
   </header>
 
 
-
-  <!-- =====================================
-       HERO
-  ====================================== -->
-
-  <section class="hero">
-
-    <div class="hero-content">
-
-      <div class="location">
-        BIERUŃ • TYCHY • OKOLICE
-      </div>
-
-      <h1>
-        DETAL ROBI
-        <span>RÓŻNICĘ.</span>
-      </h1>
-
-      <p class="hero-description">
-        ELVARET DETAILING to dokładna pielęgnacja samochodu
-        bez zbędnego nadęcia. Korekta lakieru, renowacja lamp,
-        detailing wnętrza i mycie detailingowe.
-      </p>
-
-      <div class="buttons">
-
-        <a href="#kontakt" class="btn btn-primary">
-          UMÓW TERMIN →
-        </a>
-
-        <a href="#cennik" class="btn btn-outline">
-          ZOBACZ CENNIK →
-        </a>
-
-      </div>
-
-    </div>
-
-
-    <!-- LOGO -->
-
-    <div class="hero-visual">
-
-      <div class="logo-box">
-
-        <img
-          src="./logo.png"
-          alt="ELVARET DETAILING"
-          class="main-logo"
-        >
-
-      </div>
-
-    </div>
-
-
-    <div class="m5-background">
-      M5
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================
-       FEATURES
-  ====================================== -->
-
-  <section class="features">
-
-    <div class="feature">
-
-      <div class="feature-icon">
-        ◎
-      </div>
-
-      <h3>
-        PRECISION
-      </h3>
-
-      <p>
-        Dokładność w każdym detalu.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-icon">
-        ♡
-      </div>
-
-      <h3>
-        PASSION
-      </h3>
-
-      <p>
-        Robimy to z pasją do motoryzacji.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-icon">
-        ◇
-      </div>
-
-      <h3>
-        QUALITY
-      </h3>
-
-      <p>
-        Sprawdzone produkty i techniki.
-      </p>
-
-    </div>
-
-
-    <div class="feature">
-
-      <div class="feature-icon">
-        ✦
-      </div>
-
-      <h3>
-        RESULT
-      </h3>
-
-      <p>
-        Efekt, który widać od razu.
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================
-       O NAS
-  ====================================== -->
-
-  <section class="about" id="onas">
-
-    <div>
-
-      <div class="section-label">
-        ELVARET DETAILING
-      </div>
-
-      <h2>
-        AUTO MA
-        <span>WYGLĄDAĆ.</span>
-      </h2>
-
-      <p class="about-text">
-        Nie chodzi tylko o umycie samochodu.
-        Chodzi o efekt, który widać przy każdym spojrzeniu.
-        Pracujemy dokładnie, etapami i bez skrótów.
-      </p>
-
-    </div>
-
-
-    <div class="about-card">
-
-      <h3>
-        DETAIL Z GŁOWĄ
-      </h3>
-
-      <p>
-        Dobieramy sposób pracy do stanu samochodu.
-        Lakier, lampy, wnętrze czy dokładne mycie
-        wymagają innego podejścia.
-        Dlatego każdą realizację traktujemy indywidualnie.
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================
-       USŁUGI
-  ====================================== -->
+  <!-- =========================
+       SERVICES
+  ========================== -->
 
   <section class="services" id="uslugi">
 
-    <div class="services-title">
+    <div class="container">
 
       <div class="section-label">
         CO ROBIMY
       </div>
 
-      <h2>
-        USŁUGI
-        <span>DETAILINGOWE.</span>
+      <h2 class="section-title">
+        KONKRETNE USŁUGI.<br>
+        <span>ZERO ŚCIEMY.</span>
       </h2>
 
+      <p class="section-description">
+        Zajmujemy się tym, co naprawdę poprawia wygląd samochodu.
+        Od szybkiego odświeżenia po dokładną korektę i renowację.
+      </p>
+
+
+      <div class="services-grid">
+
+        <div class="service">
+          <div class="service-number">01</div>
+          <h3>Renowacja lamp</h3>
+          <p>
+            Usuwanie zmatowienia, utlenienia i drobnych rys.
+            Przywracamy lampom przejrzystość i świeży wygląd.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">02</div>
+          <h3>Korekta lakieru</h3>
+          <p>
+            Polerowanie lakieru i redukcja zarysowań oraz
+            hologramów. Więcej połysku, mniej niedoskonałości.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">03</div>
+          <h3>Detailing wnętrza</h3>
+          <p>
+            Dokładne czyszczenie plastików, tapicerki,
+            dywanów i trudno dostępnych miejsc.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">04</div>
+          <h3>Mycie detailingowe</h3>
+          <p>
+            Bezpieczne mycie samochodu z naciskiem na
+            dokładność i ochronę powierzchni.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">05</div>
+          <h3>Odświeżenie auta</h3>
+          <p>
+            Szybki pakiet dla samochodów, które potrzebują
+            po prostu odzyskać świeży i zadbany wygląd.
+          </p>
+        </div>
+
+        <div class="service">
+          <div class="service-number">06</div>
+          <h3>Indywidualna wycena</h3>
+          <p>
+            Każdy samochód jest inny. Podeślij zdjęcia,
+            a dobierzemy zakres prac do jego stanu i potrzeb.
+          </p>
+        </div>
+
+      </div>
+
     </div>
+  </section>
 
 
-    <div class="service-grid">
+  <!-- =========================
+       ABOUT
+  ========================== -->
 
+  <section class="about" id="o-nas">
 
-      <div class="service">
+    <div class="container about-grid">
 
-        <div class="service-number">
-          01
+      <div>
+
+        <div class="section-label">
+          ELVARET DETAILING
         </div>
 
-        <h3>
-          KOREKTA LAKIERU
-        </h3>
+        <h2 class="section-title">
+          SAMOCHÓD<br>
+          <span>MA WYGLĄDAĆ.</span>
+        </h2>
 
-        <p>
-          Odświeżenie lakieru, redukcja
-          zarysowań i przywrócenie połysku.
+        <p class="section-description">
+          Nie chodzi tylko o umycie samochodu.
+          Chodzi o efekt, który widać od razu po odebraniu auta.
+          Pracujemy dokładnie, etapami i bez pośpiechu.
         </p>
 
       </div>
 
+      <div class="about-box">
 
-      <div class="service">
-
-        <div class="service-number">
-          02
-        </div>
-
-        <h3>
-          RENOWACJA LAMP
-        </h3>
+        <strong>DETAIL.</strong>
 
         <p>
-          Polerowanie mocno zmatowiałych
-          i zapuszczonych reflektorów.
+          Skupiamy się na szczegółach, które często są pomijane.
+          Lakier, lampy, wnętrze i wszystkie miejsca,
+          które razem robią różnicę.
         </p>
 
       </div>
-
-
-      <div class="service">
-
-        <div class="service-number">
-          03
-        </div>
-
-        <h3>
-          DETAILING WNĘTRZA
-        </h3>
-
-        <p>
-          Dokładne czyszczenie i odświeżenie
-          wnętrza samochodu.
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <div class="service-number">
-          04
-        </div>
-
-        <h3>
-          MYCIE DETAILINGOWE
-        </h3>
-
-        <p>
-          Bezpieczne mycie samochodu
-          z dokładnością do każdego detalu.
-        </p>
-
-      </div>
-
 
     </div>
 
   </section>
 
 
+  <!-- =========================
+       PROCESS
+  ========================== -->
 
-  <!-- =====================================
-       CENNIK
-  ====================================== -->
+  <section class="process" id="proces">
 
-  <section class="pricing" id="cennik">
-
-    <div class="section-label">
-      CENNIK
-    </div>
-
-    <h2>
-      PROSTE
-      <span>ZASADY.</span>
-    </h2>
-
-
-    <div class="price-grid">
-
-
-      <div class="price-card">
-
-        <h3>
-          MYCIE DETAILINGOWE
-        </h3>
-
-        <div class="price">
-          OD 100 zł
-        </div>
-
-        <p>
-          Cena zależna od wielkości
-          i stanu samochodu.
-        </p>
-
-      </div>
-
-
-      <div class="price-card">
-
-        <h3>
-          RENOWACJA LAMP
-        </h3>
-
-        <div class="price">
-          OD 150 zł
-        </div>
-
-        <p>
-          Dokładna cena po ocenie
-          stanu reflektorów.
-        </p>
-
-      </div>
-
-
-      <div class="price-card">
-
-        <h3>
-          KOREKTA LAKIERU
-        </h3>
-
-        <div class="price">
-          WYCENA
-        </div>
-
-        <p>
-          Indywidualna wycena po
-          oględzinach samochodu.
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================
-       REALIZACJE
-  ====================================== -->
-
-  <section class="services" id="realizacje">
-
-    <div class="services-title">
+    <div class="container">
 
       <div class="section-label">
-        NASZA PRACA
+        PROSTO I KONKRETNIE
       </div>
 
-      <h2>
-        REALIZACJE
-        <span>WKRÓTCE.</span>
+      <h2 class="section-title">
+        JAK TO <span>DZIAŁA?</span>
       </h2>
 
-    </div>
 
-    <p class="hero-description">
-      Tutaj pojawią się zdjęcia samochodów przed i po realizacji.
-      Będziemy mogli zrobić galerię z efektem pracy ELVARET DETAILING.
-    </p>
+      <div class="process-grid">
+
+        <div class="step">
+          <div class="step-number">01</div>
+          <h3>Kontakt</h3>
+          <p>
+            Piszesz lub dzwonisz i opisujesz,
+            czego potrzebuje samochód.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">02</div>
+          <h3>Wycena</h3>
+          <p>
+            Na podstawie zdjęć lub oględzin
+            ustalamy zakres i cenę.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">03</div>
+          <h3>Detailing</h3>
+          <p>
+            Samochód trafia w ręce i zaczynamy
+            pracę nad każdym detalem.
+          </p>
+        </div>
+
+        <div class="step">
+          <div class="step-number">04</div>
+          <h3>Odbiór</h3>
+          <p>
+            Odbierasz auto czyste, zadbane
+            i gotowe robić wrażenie.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
 
   </section>
 
 
+  <!-- =========================
+       CTA
+  ========================== -->
 
-  <!-- =====================================
-       KONTAKT
-  ====================================== -->
+  <section class="cta">
+
+    <div class="container">
+
+      <h2>
+        TWÓJ SAMOCHÓD.<br>
+        <span>NASZ DETAL.</span>
+      </h2>
+
+      <p>
+        Podeślij zdjęcia samochodu i napisz,
+        co chciałbyś zrobić. Dobierzemy odpowiedni zakres prac.
+      </p>
+
+      <a href="#kontakt" class="btn btn-primary">
+        ZAPYTAJ O WYCENĘ
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+  ========================== -->
 
   <section class="contact" id="kontakt">
 
-    <div>
+    <div class="container">
 
       <div class="section-label">
         KONTAKT
       </div>
 
-      <h2>
-        UMÓW
-        <span>TERMIN.</span>
+      <h2 class="section-title">
+        ZACZNIJMY <span>DZIAŁAĆ.</span>
       </h2>
 
-      <p class="hero-description">
-        Napisz lub zadzwoń. Ustalimy zakres prac,
-        termin oraz dokładną wycenę.
+      <p class="section-description">
+        Najszybciej wycenimy usługę po otrzymaniu kilku zdjęć auta.
       </p>
 
-    </div>
 
+      <div class="contact-grid">
 
-    <div class="contact-info">
+        <a href="tel:+48123456789" class="contact-box">
+          <span>TELEFON</span>
+          <strong>+48 123 456 789</strong>
+        </a>
 
-      <div class="contact-item">
+        <a href="mailto:kontakt@elvaret.pl" class="contact-box">
+          <span>E-MAIL</span>
+          <strong>kontakt@elvaret.pl</strong>
+        </a>
 
-        <small>
-          TELEFON
-        </small>
-
-        <strong>
-          000 000 000
-        </strong>
-
-      </div>
-
-
-      <div class="contact-item">
-
-        <small>
-          INSTAGRAM
-        </small>
-
-        <strong>
-          @elvaret.detailing
-        </strong>
-
-      </div>
-
-
-      <div class="contact-item">
-
-        <small>
-          OBSZAR DZIAŁANIA
-        </small>
-
-        <strong>
-          Bieruń • Tychy • okolice
-        </strong>
+        <div class="contact-box">
+          <span>OBSZAR DZIAŁANIA</span>
+          <strong>Bieruń • Tychy • okolice</strong>
+        </div>
 
       </div>
 
@@ -1415,111 +878,26 @@
   </section>
 
 
-
-  <!-- =====================================
+  <!-- =========================
        FOOTER
-  ====================================== -->
+  ========================== -->
 
   <footer>
 
-    <div class="footer-logo">
+    <div class="container footer-inner">
 
-      <img
-        src="./logo.png"
-        alt="ELVARET DETAILING"
-      >
+      <div>
+        © 2026 ELVARET DETAILING
+      </div>
 
-    </div>
+      <div>
+        Detailing samochodowy •
+        <span class="green">Bieruń / Tychy</span>
+      </div>
 
-
-    <div class="footer-links">
-
-      <a href="#">
-        START
-      </a>
-
-      <a href="#onas">
-        O NAS
-      </a>
-
-      <a href="#uslugi">
-        USŁUGI
-      </a>
-
-      <a href="#cennik">
-        CENNIK
-      </a>
-
-      <a href="#realizacje">
-        REALIZACJE
-      </a>
-
-      <a href="#kontakt">
-        KONTAKT
-      </a>
-
-    </div>
-
-
-    <div class="copyright">
-      © 2026 ELVARET DETAILING
     </div>
 
   </footer>
 
-
-
-  <!-- =====================================
-       PROSTE MENU MOBILNE
-  ====================================== -->
-
-  <script>
-
-    const menuButton = document.querySelector(".mobile-menu");
-    const nav = document.querySelector("nav");
-
-    menuButton.addEventListener("click", function() {
-
-      if (nav.style.display === "flex") {
-
-        nav.style.display = "none";
-
-      } else {
-
-        nav.style.display = "flex";
-
-        nav.style.position = "absolute";
-        nav.style.top = "72px";
-        nav.style.left = "0";
-        nav.style.right = "0";
-
-        nav.style.background = "#050505";
-
-        nav.style.padding = "25px";
-
-        nav.style.flexDirection = "column";
-
-        nav.style.borderBottom = "1px solid #242424";
-
-      }
-
-    });
-
-
-    document.querySelectorAll("nav a").forEach(function(link) {
-
-      link.addEventListener("click", function() {
-
-        if (window.innerWidth <= 950) {
-          nav.style.display = "none";
-        }
-
-      });
-
-    });
-
-  </script>
-
-
 </body>
-      </html>
+</html>
