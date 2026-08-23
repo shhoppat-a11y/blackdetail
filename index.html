@@ -4,583 +4,1788 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>UNIQUE AUTO DETAILING</title>
+<title>ELVARET DETAILING | Bieruń</title>
+
+<meta name="description"
+content="ELVARET DETAILING Bieruń. Korekta lakieru, renowacja lamp, detailing wnętrza, pranie tapicerki i mycie detailingowe.">
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+:root{
+--bg:#050505;
+--card:#101010;
+--line:#242424;
+--lime:#b8ff00;
+--muted:#969696;
+--white:#f5f5f5;
 }
 
-html {
-    scroll-behavior: smooth;
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #080808;
-    color: white;
+html{
+scroll-behavior:smooth;
 }
 
-header {
-    background: #050505;
-    border-bottom: 1px solid #222;
-    padding: 18px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+body{
+background:var(--bg);
+color:var(--white);
+font-family:Arial,Helvetica,sans-serif;
+line-height:1.5;
 }
 
-.nav {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+a{
+text-decoration:none;
+color:inherit;
 }
 
-.logo-mini {
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 2px;
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 25px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 22px;
-    font-size: 14px;
+/* =========================
+   NAVBAR
+========================= */
+
+.nav{
+position:sticky;
+top:0;
+z-index:100;
+height:75px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 5%;
+background:rgba(5,5,5,.92);
+backdrop-filter:blur(15px);
+border-bottom:1px solid var(--line);
 }
 
-nav a:hover {
-    color: #ff6500;
+.logo{
+font-size:23px;
+font-weight:900;
+letter-spacing:.08em;
 }
 
-.hero {
-    max-width: 1100px;
-    margin: auto;
-    padding: 55px 20px 45px;
-    text-align: center;
+.logo span{
+display:block;
+color:var(--lime);
+font-size:9px;
+text-align:center;
+letter-spacing:.35em;
+margin-top:-4px;
 }
 
-.logo {
-    width: 180px;
-    max-width: 65%;
-    border-radius: 8px;
-    margin-bottom: 25px;
+.links{
+display:flex;
+gap:28px;
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 18px;
-    letter-spacing: 1px;
+.links a{
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.13em;
+color:#aaa;
+transition:.2s;
 }
 
-.hero h1 span {
-    color: #ff6500;
+.links a:hover{
+color:var(--lime);
 }
 
-.hero p {
-    max-width: 700px;
-    margin: auto;
-    color: #aaa;
-    font-size: 18px;
-    line-height: 1.7;
+.phone{
+background:var(--lime);
+color:#050505;
+padding:12px 18px;
+font-size:12px;
+font-weight:900;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 30px;
-    background: #ff6500;
-    color: white;
-    text-decoration: none;
-    padding: 16px 32px;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 16px;
+/* =========================
+   HERO
+========================= */
+
+.hero{
+position:relative;
+min-height:650px;
+display:flex;
+align-items:center;
+overflow:hidden;
+padding:80px 8%;
+background:
+radial-gradient(
+circle at 80% 35%,
+rgba(184,255,0,.16),
+transparent 25%
+),
+linear-gradient(
+115deg,
+#050505 20%,
+#101010 70%,
+#192000
+);
 }
 
-.button:hover {
-    background: #ff7b24;
+.hero:after{
+content:"M5";
+position:absolute;
+right:2%;
+bottom:-70px;
+font-size:280px;
+font-weight:900;
+font-style:italic;
+color:rgba(255,255,255,.025);
 }
 
-.section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px;
+.hero-content{
+position:relative;
+z-index:2;
+max-width:650px;
 }
 
-.section-title {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 15px;
+.eyebrow{
+color:var(--lime);
+font-size:11px;
+font-weight:900;
+letter-spacing:.3em;
+text-transform:uppercase;
 }
 
-.section-subtitle {
-    text-align: center;
-    color: #999;
-    max-width: 700px;
-    margin: 0 auto 40px;
-    line-height: 1.6;
+.hero h1{
+font-size:clamp(55px,8vw,95px);
+line-height:.88;
+letter-spacing:-.06em;
+margin:18px 0 25px;
+text-transform:uppercase;
 }
 
-.benefits {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+.hero h1 span{
+color:var(--lime);
 }
 
-.benefit {
-    background: #141414;
-    border: 1px solid #292929;
-    padding: 25px 15px;
-    border-radius: 12px;
-    text-align: center;
+.hero p{
+color:#aaa;
+font-size:17px;
+max-width:560px;
 }
 
-.benefit-icon {
-    font-size: 32px;
-    margin-bottom: 12px;
+.actions{
+display:flex;
+gap:12px;
+margin-top:30px;
 }
 
-.benefit h3 {
-    margin-bottom: 8px;
+.btn{
+padding:15px 22px;
+font-size:11px;
+font-weight:900;
+letter-spacing:.13em;
+text-transform:uppercase;
 }
 
-.benefit p {
-    color: #999;
-    font-size: 14px;
-    line-height: 1.5;
+.primary{
+background:var(--lime);
+color:#050505;
 }
 
-.about {
-    background: #111;
-    border-top: 1px solid #222;
-    border-bottom: 1px solid #222;
+.secondary{
+border:1px solid #555;
 }
 
-.about-content {
-    max-width: 850px;
-    margin: auto;
-    text-align: center;
+.car{
+position:absolute;
+right:7%;
+top:120px;
+width:40%;
+height:300px;
+
+background:
+linear-gradient(
+145deg,
+#181818,
+#070707
+);
+
+border:1px solid #292929;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+transform:skew(-4deg);
 }
 
-.about p {
-    color: #aaa;
-    line-height: 1.8;
-    font-size: 17px;
+.car:before{
+content:"BMW\A M5";
+white-space:pre;
+text-align:center;
+font-size:70px;
+line-height:.8;
+font-weight:900;
+font-style:italic;
+color:#ddd;
 }
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+.car:after{
+content:"";
+position:absolute;
+bottom:22px;
+left:12%;
+right:12%;
+height:4px;
+background:var(--lime);
+box-shadow:0 0 25px var(--lime);
 }
 
-.product {
-    background: #141414;
-    border: 1px solid #292929;
-    border-radius: 14px;
-    overflow: hidden;
+/* =========================
+   TICKER
+========================= */
+
+.ticker{
+display:flex;
+gap:50px;
+overflow:hidden;
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+padding:17px 5%;
+color:#666;
+font-size:10px;
+font-weight:800;
+letter-spacing:.25em;
+text-transform:uppercase;
 }
 
-.product img {
-    width: 100%;
-    height: 330px;
-    object-fit: contain;
-    background: white;
-    display: block;
+.ticker b{
+color:var(--lime);
 }
 
-.product-info {
-    padding: 22px;
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+max-width:1200px;
+margin:auto;
+padding:100px 25px;
 }
 
-.badge {
-    color: #ff6500;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
+.head{
+display:flex;
+justify-content:space-between;
+align-items:end;
+gap:40px;
+margin-bottom:45px;
 }
 
-.product h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
+.head h2{
+font-size:55px;
+line-height:.92;
+letter-spacing:-.05em;
+text-transform:uppercase;
+margin-top:10px;
 }
 
-.product p {
-    color: #999;
-    line-height: 1.5;
-    margin-bottom: 15px;
+.head h2 span{
+color:var(--lime);
 }
 
-.price {
-    font-size: 25px;
-    font-weight: bold;
-    margin-bottom: 18px;
+.head p{
+max-width:390px;
+color:#777;
+font-size:14px;
 }
 
-.cart-btn {
-    width: 100%;
-    border: none;
-    background: #ff6500;
-    color: white;
-    padding: 14px;
-    border-radius: 7px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+/* =========================
+   SERVICES
+========================= */
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
 }
 
-.cart-btn:hover {
-    background: #ff7b24;
+.card{
+min-height:230px;
+position:relative;
+padding:28px;
+
+background:
+linear-gradient(
+145deg,
+#121212,
+#080808
+);
+
+border:1px solid var(--line);
+transition:.3s;
 }
 
-.cart {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    background: #ff6500;
-    color: white;
-    padding: 15px 20px;
-    border-radius: 30px;
-    font-weight: bold;
-    z-index: 200;
-    box-shadow: 0 5px 25px rgba(0,0,0,.5);
+.card:hover{
+transform:translateY(-5px);
+border-color:#789b00;
 }
 
-.contact {
-    text-align: center;
-    background: #111;
-    border-top: 1px solid #222;
+.num{
+position:absolute;
+right:20px;
+top:18px;
+color:#444;
+font-size:11px;
 }
 
-.contact p {
-    color: #aaa;
-    margin-top: 10px;
+.ico{
+color:var(--lime);
+font-size:30px;
 }
 
-footer {
-    text-align: center;
-    padding: 30px 20px;
-    color: #666;
-    font-size: 13px;
+.card h3{
+font-size:19px;
+text-transform:uppercase;
+margin:20px 0 8px;
 }
 
-@media (max-width: 700px) {
-
-    header {
-        padding: 15px;
-    }
-
-    .nav {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    nav a {
-        margin: 0 8px;
-        font-size: 13px;
-    }
-
-    .hero {
-        padding-top: 40px;
-    }
-
-    .hero h1 {
-        font-size: 31px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .benefits {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .products {
-        grid-template-columns: 1fr;
-    }
-
-    .product img {
-        height: 280px;
-    }
+.card p{
+font-size:13px;
+color:#777;
 }
+
+.card strong{
+position:absolute;
+bottom:22px;
+color:var(--lime);
+font-size:17px;
+}
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+padding:100px 8%;
+text-align:center;
+
+border-top:1px solid var(--line);
+border-bottom:1px solid var(--line);
+
+background:
+linear-gradient(
+90deg,
+#050505,
+#101600,
+#050505
+);
+}
+
+.quote h2{
+font-size:clamp(35px,5vw,65px);
+line-height:1;
+text-transform:uppercase;
+}
+
+.quote span{
+color:var(--lime);
+}
+
+.quote small{
+display:block;
+margin-top:20px;
+color:#666;
+letter-spacing:.2em;
+}
+
+/* =========================
+   WHY ELVARET
+========================= */
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+}
+
+.info-box{
+padding:30px;
+background:#0b0b0b;
+border:1px solid var(--line);
+}
+
+.info-box h3{
+font-size:16px;
+text-transform:uppercase;
+margin-bottom:12px;
+}
+
+.info-box p{
+font-size:13px;
+color:#777;
+}
+
+/* =========================
+   PROCESS
+========================= */
+
+.steps{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+}
+
+.step{
+padding:28px;
+background:#0b0b0b;
+border-left:2px solid var(--lime);
+}
+
+.step b{
+color:var(--lime);
+font-size:13px;
+}
+
+.step h3{
+font-size:16px;
+text-transform:uppercase;
+margin:12px 0 7px;
+}
+
+.step p{
+font-size:12px;
+color:#777;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.faq{
+max-width:900px;
+margin:auto;
+}
+
+.faq details{
+border-bottom:1px solid var(--line);
+padding:22px 0;
+}
+
+.faq summary{
+cursor:pointer;
+font-size:13px;
+font-weight:900;
+text-transform:uppercase;
+}
+
+.faq p{
+margin-top:12px;
+font-size:13px;
+color:#777;
+max-width:750px;
+}
+
+.note{
+margin-top:25px;
+color:#666;
+font-size:12px;
+}
+
+/* =========================
+   PRICES
+========================= */
+
+.prices{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.price{
+display:flex;
+justify-content:space-between;
+gap:20px;
+padding:22px 0;
+border-bottom:1px solid var(--line);
+}
+
+.price b{
+font-size:13px;
+text-transform:uppercase;
+}
+
+.price small{
+display:block;
+color:#666;
+margin-top:5px;
+}
+
+.price strong{
+color:var(--lime);
+white-space:nowrap;
+}
+
+.poster{
+min-height:400px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+
+background:
+radial-gradient(
+circle,
+#263500,
+#090909 65%
+);
+
+border:1px solid var(--line);
+}
+
+.poster b{
+font-size:65px;
+letter-spacing:-.07em;
+}
+
+.poster span{
+display:block;
+color:var(--lime);
+font-size:11px;
+letter-spacing:.3em;
+}
+
+/* =========================
+   REALIZACJE
+========================= */
+
+.gallery{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:14px;
+}
+
+.gallery-box{
+min-height:260px;
+border:1px solid var(--line);
+background:
+linear-gradient(
+145deg,
+#151515,
+#080808
+);
+
+display:flex;
+align-items:flex-end;
+padding:25px;
+}
+
+.gallery-box.big{
+grid-row:span 2;
+min-height:530px;
+}
+
+.gallery-box h3{
+font-size:24px;
+text-transform:uppercase;
+}
+
+.gallery-box span{
+color:var(--lime);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+padding:120px 20px;
+text-align:center;
+
+background:
+linear-gradient(
+135deg,
+#090909,
+#151d00
+);
+}
+
+.contact h2{
+font-size:65px;
+line-height:.9;
+text-transform:uppercase;
+margin:10px 0 25px;
+}
+
+.contact h2 span{
+color:var(--lime);
+}
+
+.contact p{
+color:#888;
+}
+
+.bigphone{
+display:inline-block;
+margin-top:20px;
+color:var(--lime);
+font-size:clamp(40px,6vw,75px);
+font-weight:900;
+}
+
+.hours{
+margin-top:15px;
+color:#666;
+font-size:11px;
+letter-spacing:.15em;
+text-transform:uppercase;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+display:flex;
+justify-content:space-between;
+padding:30px 7%;
+border-top:1px solid var(--line);
+color:#555;
+font-size:10px;
+}
+
+footer b{
+color:var(--lime);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+.links{
+display:none;
+}
+
+.phone{
+display:none;
+}
+
+.hero{
+min-height:650px;
+padding:55px 7%;
+}
+
+.hero-content{
+max-width:100%;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.car{
+position:relative;
+right:auto;
+top:auto;
+width:100%;
+height:170px;
+margin-top:40px;
+}
+
+.car:before{
+font-size:48px;
+}
+
+.cards{
+grid-template-columns:1fr 1fr;
+}
+
+.info-grid{
+grid-template-columns:1fr;
+}
+
+.steps{
+grid-template-columns:1fr 1fr;
+}
+
+.prices{
+grid-template-columns:1fr;
+}
+
+.head{
+display:block;
+}
+
+.head p{
+margin-top:20px;
+}
+
+.gallery{
+grid-template-columns:1fr 1fr;
+}
+
+.gallery-box.big{
+grid-column:span 2;
+grid-row:auto;
+min-height:300px;
+}
+
+}
+
+@media(max-width:520px){
+
+.nav{
+height:68px;
+padding:0 20px;
+}
+
+.logo{
+font-size:19px;
+}
+
+.hero{
+padding:50px 20px;
+}
+
+.hero h1{
+font-size:52px;
+}
+
+.hero p{
+font-size:15px;
+}
+
+.actions{
+flex-wrap:wrap;
+}
+
+.section{
+padding:75px 20px;
+}
+
+.head h2{
+font-size:42px;
+}
+
+.cards{
+grid-template-columns:1fr;
+}
+
+.steps{
+grid-template-columns:1fr;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.gallery-box.big{
+grid-column:auto;
+}
+
+.quote{
+padding:75px 20px;
+}
+
+.quote h2{
+font-size:35px;
+}
+
+.contact{
+padding:90px 20px;
+}
+
+.contact h2{
+font-size:46px;
+}
+
+.bigphone{
+font-size:42px;
+}
+
+footer{
+display:block;
+text-align:center;
+}
+
+footer div{
+margin:8px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="nav">
+<!-- =========================
+     MENU
+========================= -->
 
-        <div class="logo-mini">
-            UNIQUE AUTO DETAILING
-        </div>
+<header class="nav">
 
-        <nav>
-            <a href="#start">START</a>
-            <a href="#o-nas">O NAS</a>
-            <a href="#asortyment">ASORTYMENT</a>
-            <a href="#kontakt">KONTAKT</a>
-        </nav>
+<a href="#" class="logo">
+ELVARET
+<span>DETAILING</span>
+</a>
 
-    </div>
+<nav class="links">
+
+<a href="#uslugi">Usługi</a>
+<a href="#dlaczego">O nas</a>
+<a href="#realizacje">Realizacje</a>
+<a href="#cennik">Cennik</a>
+<a href="#faq">FAQ</a>
+<a href="#kontakt">Kontakt</a>
+
+</nav>
+
+<a class="phone" href="tel:+48733447003">
+733 447 003
+</a>
+
 </header>
 
 
-<section class="hero" id="start">
+<!-- =========================
+     HERO
+========================= -->
 
-    <img
-        class="logo"
-        src="Screenshot_20260821_205135_ChatGPT.jpg"
-        alt="Unique Auto Detailing">
+<section class="hero">
 
-    <h1>
-        DETAILING ZACZYNA SIĘ <span>TUTAJ</span>
-    </h1>
+<div class="hero-content">
 
-    <p>
-        Zadbane auto to nie tylko wygląd.
-        To dbałość o każdy szczegół, odpowiednie akcesoria
-        i przyjemność z jazdy samochodem, który naprawdę dobrze się prezentuje.
-    </p>
+<div class="eyebrow">
+BIERUŃ • TYCHY • OKOLICE
+</div>
 
-    <a class="button" href="#asortyment">
-        🛒 ZOBACZ ASORTYMENT
-    </a>
+<h1>
+Detal robi<br>
+<span>różnicę.</span>
+</h1>
 
-</section>
+<p>
+ELVARET DETAILING to dokładna pielęgnacja
+samochodu bez zbędnego nadęcia.
+Korekta lakieru, renowacja lamp,
+detailing wnętrza i mycie detailingowe.
+</p>
 
+<div class="actions">
 
-<section class="section">
+<a class="btn primary" href="#kontakt">
+Umów termin
+</a>
 
-    <h2 class="section-title">
-        Dlaczego warto dbać o auto?
-    </h2>
+<a class="btn secondary" href="#cennik">
+Zobacz cennik
+</a>
 
-    <p class="section-subtitle">
-        Regularna pielęgnacja samochodu pozwala utrzymać jego wygląd
-        i sprawia, że codzienna jazda daje jeszcze więcej satysfakcji.
-    </p>
+</div>
 
-    <div class="benefits">
-
-        <div class="benefit">
-            <div class="benefit-icon">✨</div>
-            <h3>Wygląd</h3>
-            <p>
-                Auto wygląda świeżo i zadbanie każdego dnia.
-            </p>
-        </div>
-
-        <div class="benefit">
-            <div class="benefit-icon">🛡️</div>
-            <h3>Ochrona</h3>
-            <p>
-                Odpowiednia pielęgnacja pomaga chronić powierzchnie auta.
-            </p>
-        </div>
-
-        <div class="benefit">
-            <div class="benefit-icon">🧽</div>
-            <h3>Czystość</h3>
-            <p>
-                Dobre akcesoria ułatwiają dokładne mycie samochodu.
-            </p>
-        </div>
-
-        <div class="benefit">
-            <div class="benefit-icon">❤️</div>
-            <h3>Satysfakcja</h3>
-            <p>
-                Bo zadbane auto po prostu cieszy bardziej.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="about" id="o-nas">
-
-    <div class="section">
-
-        <div class="about-content">
-
-            <h2 class="section-title">
-                🚗 Dbaj o każdy szczegół
-            </h2>
-
-            <p>
-                Detailing samochodowy to dbałość o detale.
-                Nie musisz być profesjonalistą, żeby zadbać o swoje auto.
-                Wystarczy odpowiedni produkt, trochę czasu i chęć,
-                żeby samochód wyglądał naprawdę dobrze.
-            </p>
-
-            <br>
-
-            <p>
-                W UNIQUE AUTO DETAILING znajdziesz praktyczne akcesoria
-                do pielęgnacji samochodu, które możesz wykorzystać
-                podczas codziennego mycia i detailingu.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="section" id="asortyment">
-
-    <h2 class="section-title">
-        🛍️ ASORTYMENT
-    </h2>
-
-    <p class="section-subtitle">
-        Wybierz akcesoria i zacznij dbać o swoje auto.
-    </p>
-
-
-    <div class="products">
-
-
-        <!-- PĘDZLE -->
-
-        <div class="product">
-
-            <img
-                src="Screenshot_20260821_205326_Allegro.jpg"
-                alt="Zestaw pędzli detailingowych">
-
-            <div class="product-info">
-
-                <div class="badge">
-                    BLACKDETAIL • BESTSELLER
-                </div>
-
-                <h3>
-                    Zestaw 5 pędzli detailingowych
-                </h3>
-
-                <p>
-                    Praktyczny zestaw pędzli do dokładnego czyszczenia
-                    wnętrza, plastików, zakamarków i elementów samochodu.
-                </p>
-
-                <div class="price">
-                    25,00 zł
-                </div>
-
-                <button
-                    class="cart-btn"
-                    onclick="addToCart('Zestaw 5 pędzli detailingowych', 25)">
-                    🛒 DODAJ DO KOSZYKA
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- RĘKAWICA -->
-
-        <div class="product">
-
-            <img
-                src="file_0000000031a4824683761b6dd9798797.png"
-                alt="Rękawica z mikrofibry">
-
-            <div class="product-info">
-
-                <div class="badge">
-                    BLACKDETAIL • POLECANA
-                </div>
-
-                <h3>
-                    Rękawica z mikrofibry
-                </h3>
-
-                <p>
-                    Wygodna rękawica do mycia samochodu.
-                    Pomaga dokładnie usuwać zabrudzenia
-                    podczas pielęgnacji auta.
-                </p>
-
-                <div class="price">
-                    25,00 zł
-                </div>
-
-                <button
-                    class="cart-btn"
-                    onclick="addToCart('Rękawica z mikrofibry', 25)">
-                    🛒 DODAJ DO KOSZYKA
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="contact section" id="kontakt">
-
-    <h2 class="section-title">
-        📩 KONTAKT
-    </h2>
-
-    <p>
-        Masz pytanie dotyczące produktu?
-    </p>
-
-    <p>
-        Napisz do nas i chętnie pomożemy.
-    </p>
-
-</section>
-
-
-<footer>
-    © 2026 UNIQUE AUTO DETAILING
-    <br>
-    Detailing • Clean • Pro
-</footer>
-
-
-<div class="cart">
-    🛒 Koszyk: <span id="cartCount">0</span>
 </div>
 
 
-<script>
+<div class="car">
 
-let cartCount = 0;
+</div>
 
-function addToCart(name, price) {
+</section>
 
-    cartCount++;
 
-    document.getElementById("cartCount").innerText = cartCount;
+<!-- =========================
+     TICKER
+========================= -->
 
-    alert(
-        name +
-        " został dodany do koszyka.\n\nCena: " +
-        price.toFixed(2) +
-        " zł"
-    );
-}
+<div class="ticker">
 
-</script>
+<b>ELVARET DETAILING</b>
+
+<span>PRECISION</span>
+
+<span>PASSION</span>
+
+<span>RESULT</span>
+
+<b>ELVARET DETAILING</b>
+
+<span>BIERUŃ</span>
+
+</div>
+
+
+<!-- =========================
+     USŁUGI
+========================= -->
+
+<section class="section" id="uslugi">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+CO ROBIMY
+</div>
+
+<h2>
+Usługi, które<br>
+<span>mają sens.</span>
+</h2>
+
+</div>
+
+<p>
+Zaczynamy od podstaw.
+Bez ceramiki na siłę i bez sztucznego
+pompowania oferty. Liczy się efekt.
+</p>
+
+</div>
+
+
+<div class="cards">
+
+
+<article class="card">
+
+<div class="num">01</div>
+
+<div class="ico">◉</div>
+
+<h3>
+Renowacja lamp
+</h3>
+
+<p>
+Szlifowanie, polerowanie
+i zabezpieczenie UV.
+</p>
+
+<strong>
+od 249 zł
+</strong>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">02</div>
+
+<div class="ico">✦</div>
+
+<h3>
+One-step
+</h3>
+
+<p>
+Odświeżenie lakieru
+i usunięcie drobnych rys.
+</p>
+
+<strong>
+od 549 zł
+</strong>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">03</div>
+
+<div class="ico">⌁</div>
+
+<h3>
+Wnętrze
+</h3>
+
+<p>
+Dokładne czyszczenie
+plastików, szyb i tapicerki.
+</p>
+
+<strong>
+od 299 zł
+</strong>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">04</div>
+
+<div class="ico">▱</div>
+
+<h3>
+Pranie tapicerki
+</h3>
+
+<p>
+Fotele, kanapa, boczki
+i elementy wnętrza.
+</p>
+
+<strong>
+od 349 zł
+</strong>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">05</div>
+
+<div class="ico">✧</div>
+
+<h3>
+Mycie detailingowe
+</h3>
+
+<p>
+Dokładne mycie zewnętrzne,
+felgi i trudno dostępne miejsca.
+</p>
+
+<strong>
+149 zł
+</strong>
+
+</article>
+
+
+<article class="card">
+
+<div class="num">06</div>
+
+<div class="ico">◆</div>
+
+<h3>
+Pakiet kompleksowy
+</h3>
+
+<p>
+Mycie + wnętrze
++ one-step.
+</p>
+
+<strong>
+od 849 zł
+</strong>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     HASŁO
+========================= -->
+
+<section class="quote">
+
+<h2>
+
+Nie chcemy zrobić
+najwięcej aut.
+
+<br>
+
+<span>
+Chcemy zrobić je dobrze.
+</span>
+
+</h2>
+
+<small>
+ELVARET DETAILING • BIERUŃ
+</small>
+
+</section>
+
+
+<!-- =========================
+     DLACZEGO ELVARET
+========================= -->
+
+<section class="section" id="dlaczego">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+DLACZEGO ELVARET
+</div>
+
+<h2>
+Normalne zasady.<br>
+<span>Dobra robota.</span>
+</h2>
+
+</div>
+
+<p>
+Mała lokalna pracownia,
+indywidualne podejście i konkretne zasady.
+Bez pośpiechu i bez wciskania usług,
+których auto nie potrzebuje.
+</p>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<article class="info-box">
+
+<h3>
+🔎 Dokładność
+</h3>
+
+<p>
+Pracujemy etapami i kontrolujemy efekt
+po każdym ważnym kroku.
+Szczególnie przy lampach
+i korekcie lakieru.
+</p>
+
+</article>
+
+
+<article class="info-box">
+
+<h3>
+💬 Uczciwa wycena
+</h3>
+
+<p>
+Cena zależy od wielkości auta
+i jego stanu. Jeśli zakres prac
+się zmienia, najpierw informujemy
+o tym klienta.
+</p>
+
+</article>
+
+
+<article class="info-box">
+
+<h3>
+📍 Lokalnie
+</h3>
+
+<p>
+Działamy w Bieruniu i okolicy.
+Dojazd realizujemy tylko
+przy renowacji lamp.
+</p>
+
+</article>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     JAK TO DZIAŁA
+========================= -->
+
+<section class="section">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+JAK TO WYGLĄDA
+</div>
+
+<h2>
+Od pierwszego<br>
+<span>kontaktu do odbioru.</span>
+</h2>
+
+</div>
+
+</div>
+
+
+<div class="steps">
+
+
+<div class="step">
+
+<b>01</b>
+
+<h3>
+Kontakt
+</h3>
+
+<p>
+Dzwonisz lub piszesz
+i opisujesz, czego
+potrzebuje auto.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<b>02</b>
+
+<h3>
+Wycena
+</h3>
+
+<p>
+Ustalamy zakres,
+cenę i orientacyjny
+czas realizacji.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<b>03</b>
+
+<h3>
+Detailing
+</h3>
+
+<p>
+Auto trafia na stanowisko,
+a my robimy swoje.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<b>04</b>
+
+<h3>
+Odbiór
+</h3>
+
+<p>
+Pokazujemy efekt
+i przekazujemy auto
+gotowe do jazdy.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     REALIZACJE
+========================= -->
+
+<section class="section" id="realizacje">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+REALIZACJE
+</div>
+
+<h2>
+Efekt mówi<br>
+<span>sam za siebie.</span>
+</h2>
+
+</div>
+
+<p>
+Tutaj będziemy dodawać
+prawdziwe realizacje
+ELVARET: zdjęcia przed,
+w trakcie i po.
+</p>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="gallery-box big">
+
+<div>
+
+<h3>
+Renowacja<br>
+<span>lamp</span>
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="gallery-box">
+
+<div>
+
+<h3>
+One-step
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="gallery-box">
+
+<div>
+
+<h3>
+Wnętrze
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="gallery-box">
+
+<div>
+
+<h3>
+Detailing
+</h3>
+
+</div>
+
+</div>
+
+
+<div class="gallery-box">
+
+<div>
+
+<h3>
+Przed / <span>po</span>
+</h3>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="section" id="faq">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+PYTANIA
+</div>
+
+<h2>
+FAQ
+</h2>
+
+</div>
+
+<p>
+Najczęstsze pytania
+przed pierwszą wizytą.
+</p>
+
+</div>
+
+
+<div class="faq">
+
+
+<details>
+
+<summary>
+Ile trwa renowacja lamp?
+</summary>
+
+<p>
+Zależnie od stanu reflektorów.
+Po oględzinach podajemy konkretny
+zakres i przewidywany czas realizacji.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Czy przyjmujecie auta po 15:00?
+</summary>
+
+<p>
+Nie. Pracujemy od poniedziałku
+do piątku w godzinach 7:00–15:00.
+Sobota jest obecnie wolna.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Czy można przyjechać tylko na lampy?
+</summary>
+
+<p>
+Tak. Renowacja lamp jest jedną
+z naszych głównych usług.
+W przypadku lamp oferujemy również
+dojazd.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Czy robicie ceramikę?
+</summary>
+
+<p>
+Na start nie.
+Skupiamy się na podstawowych
+usługach detailingowych
+i jakości wykonania.
+</p>
+
+</details>
+
+
+<details>
+
+<summary>
+Czy cena jest stała dla każdego auta?
+</summary>
+
+<p>
+Cennik jest orientacyjny.
+Ostateczna cena może zależeć
+od wielkości auta, stanu powierzchni
+i zakresu prac.
+</p>
+
+</details>
+
+
+<div class="note">
+
+Cennik ma charakter orientacyjny.
+Przed rozpoczęciem prac ustalamy
+zakres usługi.
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CENNIK
+========================= -->
+
+<section class="section" id="cennik">
+
+<div class="head">
+
+<div>
+
+<div class="eyebrow">
+PROSTY CENNIK
+</div>
+
+<h2>
+Bez niespodzianek.<br>
+<span>Bez lania wody.</span>
+</h2>
+
+</div>
+
+<p>
+Ceny startowe.
+Dokładna wycena zależy
+od auta i zakresu prac.
+</p>
+
+</div>
+
+
+<div class="prices">
+
+
+<div>
+
+
+<div class="price">
+
+<div>
+
+<b>
+Renowacja lamp
+</b>
+
+<small>
+polerowanie + zabezpieczenie UV
+</small>
+
+</div>
+
+<strong>
+249 zł
+</strong>
+
+</div>
+
+
+<div class="price">
+
+<div>
+
+<b>
+Mycie detailingowe
+</b>
+
+<small>
+zewnętrze + felgi
+</small>
+
+</div>
+
+<strong>
+149 zł
+</strong>
+
+</div>
+
+
+<div class="price">
+
+<div>
+
+<b>
+Czyszczenie wnętrza
+</b>
+
+<small>
+odkurzanie + plastiki + szyby
+</small>
+
+</div>
+
+<strong>
+299 zł
+</strong>
+
+</div>
+
+
+<div class="price">
+
+<div>
+
+<b>
+Pranie tapicerki
+</b>
+
+<small>
+zakres zależny od auta
+</small>
+
+</div>
+
+<strong>
+349–449 zł
+</strong>
+
+</div>
+
+
+<div class="price">
+
+<div>
+
+<b>
+One-step
+</b>
+
+<small>
+korekta lakieru
+</small>
+
+</div>
+
+<strong>
+549–649 zł
+</strong>
+
+</div>
+
+
+<div class="price">
+
+<div>
+
+<b>
+Pakiet kompleksowy
+</b>
+
+<small>
+mycie + wnętrze + one-step
+</small>
+
+</div>
+
+<strong>
+849–999 zł
+</strong>
+
+</div>
+
+
+</div>
+
+
+<div class="poster">
+
+<div>
+
+<b>
+ELVARET
+</b>
+
+<span>
+DETAILING • CENNIK
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     KONTAKT
+========================= -->
+
+<section class="contact" id="kontakt">
+
+<div class="eyebrow">
+KONTAKT
+</div>
+
+<h2>
+Masz auto.<br>
+<span>My mamy plan.</span>
+</h2>
+
+<p>
+Bieruń + okolice
+•
+Poniedziałek–piątek 7:00–15:00
+•
+Sobota nieczynna
+</p>
+
+
+<a
+class="bigphone"
+href="tel:+48733447003"
+>
+733 447 003
+</a>
+
+
+<div class="hours">
+
+Dojazd tylko przy renowacji lamp
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div>
+
+<b>
+ELVARET
+</b>
+
+DETAILING
+
+</div>
+
+
+<div>
+
+© 2026 • Bieruń + okolice
+
+</div>
+
+
+<div>
+
+PRECISION • PASSION • RESULT
+
+</div>
+
+</footer>
+
 
 </body>
-          </html>
+</html>
